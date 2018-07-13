@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import logo from "./logo.svg";
 import "./App.css";
+import routes from "./routes";
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 class App extends Component {
   render() {
@@ -10,10 +12,20 @@ class App extends Component {
           <img src={logo} className="App-logo" alt="logo" />
           <h1 className="App-title">Welcome to Volunteer</h1>
         </header>
-        <p className="App-intro">
-          Hello Dan, see you tomorrow. I've been working on setting up a basic
-          website for our project.
-        </p>
+        <p className="App-intro">New version.</p>
+        <Router>
+          <div>
+            <ul>
+              <li>
+                <Link to="/first">First</Link>
+              </li>
+              <li>
+                <Link to="/second">Second</Link>
+              </li>
+            </ul>
+            {routes.map((route, i) => <Route key={i} {...route} />)}
+          </div>
+        </Router>
       </div>
     );
   }

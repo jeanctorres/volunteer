@@ -1,0 +1,13 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+.DS_Store
+
+
+
+# Build Output
+functions/dist
+functions/node_modules
+
+.vscode
